@@ -1,0 +1,69 @@
+%!LW recipe=latexmk (xelatex)
+\documentclass[aspectratio=169]{beamer}
+\usepackage{beamerthemeihme}
+\usepackage{tabularray}
+
+
+\title{This is a title}
+\subtitle{This is a subtitle}
+\author{These are authors}
+
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{This is an example}
+
+Normal text, \textbf{bold text}, \textit{italic text}, \underline{underlined text}
+\vfill
+\begin{itemize}
+    \item This is first level of a item list
+    \begin{itemize}
+        \item This is second level of a item list
+        \begin{itemize}
+            \item This is thrid level of a item list
+        \end{itemize}
+    \end{itemize}
+\end{itemize}
+\vfill
+\begin{enumerate}
+    \item This is first level of a enumerate list
+    \begin{enumerate}
+        \item This is second level of a enumerate list
+        \begin{enumerate}
+            \item This is thrid level of a enumerate list
+        \end{enumerate}
+    \end{enumerate}
+\end{enumerate}
+\vfill
+This is example of mathematical formula
+\[
+    \exp(x) = 1 + x + \frac{x^2}{2}  + \cdots + \frac{x^n}{n!} + \cdots = \sum_{k=0}^\infty \frac{x^k}{k!}
+\]
+
+\end{frame}
+
+\begin{frame}{This is an example with two columns}
+    \begin{minipage}[t]{0.49\linewidth}
+        left part
+        
+        \begin{itemize}
+            \item Some text
+            \item Some text
+            \item Some text
+        \end{itemize}
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.49\linewidth}
+        right part
+        \begin{enumerate}
+            \item Some text
+            \item Some text
+            \item Some text
+        \end{enumerate}
+    \end{minipage}
+\end{frame}
+
+\end{document}

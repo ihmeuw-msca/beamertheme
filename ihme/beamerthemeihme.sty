@@ -1,0 +1,120 @@
+\mode<presentation>
+
+\RequirePackage{tikz}
+\RequirePackage{hyperref}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{fontspec}
+\RequirePackage{unicode-math}
+\RequirePackage{xhfill}
+
+% general settings
+\setbeamertemplate{navigation symbols}{}
+% \setbeamertemplate{blocks}[rounded][shadow=true]
+
+% color settings
+\RequirePackage{xcolor}
+\definecolor{title}{HTML}{387A92}
+\definecolor{link}{HTML}{56B6CC}
+\definecolor{text}{HTML}{212121}
+\definecolor{highlight}{HTML}{E08330}
+\definecolor{alert}{HTML}{BF5844}
+\definecolor{block}{HTML}{E4DDD1}
+
+\setbeamercolor*{title page header}{fg=text}
+\setbeamercolor*{title}{fg=title}
+\setbeamercolor*{frametitle}{fg=title}
+\setbeamercolor*{structure}{fg=highlight}
+\setbeamercolor*{normal text}{fg=text}
+\setbeamercolor*{alerted text}{fg=alert}
+\setbeamercolor*{example text}{fg=highlight}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=link,
+  urlcolor=link,
+  citecolor=link
+}
+\setbeamercolor{block title}{bg=block}
+\setbeamercolor{block body}{bg=block!30}
+
+
+% font settings
+\setsansfont[Scale=0.9]{Archivo-Light}[BoldFont=Archivo-Medium]
+\setmonofont[Scale=0.85]{SF Mono Light}
+\setmathfont[Scale=0.9]{latinmodern-math.otf}
+\newfontfamily{\archivo}{Archivo}
+\setbeamerfont{title}{size=\fontsize{32}{48}}
+\setbeamerfont{subtitle}{family=\archivo, size=\fontsize{8}{12}}
+\setbeamerfont{author}{family=\archivo, size=\fontsize{8}{12}}
+
+\setbeamersize{
+  text margin left=0.0375\paperwidth,
+  text margin right=0.0375\paperwidth,
+}
+
+% all beamer templates
+\setbeamertemplate{navigation symbols}{}
+% title page
+\defbeamertemplate*{title page}{ihme}[1][]
+{
+    % main title
+    \vskip0.05\paperheight%
+    \parbox{0.06\paperwidth}{
+      \includegraphics[width=0.06\paperwidth]{_static/ihme_logo.png}
+    }
+    \hskip0.006\paperwidth
+    \parbox{0.2\paperwidth}{
+      \linespread{0.9}
+      \usebeamerfont{subtitle}
+      Institute for Health\par
+      Metrics and Evaluation
+    }
+    \vskip0.033\paperheight%
+
+    \hskip0.03\paperwidth%
+    {\color{link}\vrule width 0.7pt}\hskip0.0405\paperwidth%
+    \begin{minipage}[c][0.65\paperheight]{0.9\textwidth}
+      % subtitle
+      \vskip0.03\paperwidth
+      \begin{beamercolorbox}[wd=0.9\textwidth,#1]{normal text}
+        \usebeamerfont{subtitle}\insertsubtitle\par%
+      \end{beamercolorbox}%
+      \vskip0.08\paperwidth
+      \begin{beamercolorbox}[wd=0.9\textwidth,#1]{title page header}
+        \usebeamerfont{title}\inserttitle\par%
+      \end{beamercolorbox}%
+      \vfill
+      % author
+      \begin{beamercolorbox}[wd=0.9\textwidth,#1]{author}
+        \usebeamerfont{author}\insertauthor%
+      \end{beamercolorbox}
+    \end{minipage}
+}
+
+% frame title
+\defbeamertemplate*{frametitle}{ihme}[1][]
+{
+    \vskip0.07\paperheight%
+    \insertframetitle
+}
+
+% footer
+\setbeamertemplate{footline}[text line]{%
+  \parbox{0.08\linewidth}{
+    \includegraphics[width=0.06\textwidth]{_static/ihme_footer.png}
+  }\xrfill[0.5ex]{0.07pt}[title]\hskip0.02\paperwidth\insertpagenumber
+}
+\addtobeamertemplate{footline}{}{\vskip0.03\paperheight}
+
+\makeatletter
+\def\ps@navigation@titlepage{%
+  \setbeamertemplate{footline}{}
+  \setbeamertemplate{headline}{}
+  \@nameuse{ps@navigation}}
+\addtobeamertemplate{title page}{\thispagestyle{navigation@titlepage}}{}
+\makeatother
+
+% item list settings
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{enumerate items}[default]
+
+\mode<all>
