@@ -38,13 +38,21 @@
 
 
 % font settings
-\setsansfont[Scale=0.9]{Archivo-Light}[BoldFont=Archivo-Medium]
-\setmonofont[Scale=0.85]{SF Mono Light}
+\setsansfont{Archivo}[
+  Scale=0.9,
+  UprightFont=*-Light,
+  BoldFont=*-Medium,
+  ItalicFont=*-LightItalic,
+  BoldItalicFont=*-MediumItalic,
+]
+\setmonofont[Scale=0.9]{Menlo}
 \setmathfont[Scale=0.9]{latinmodern-math.otf}
-\newfontfamily{\archivo}{Archivo}
+
+\newfontfamily{\smalltitle}{Archivo}
+
 \setbeamerfont{title}{size=\fontsize{32}{48}}
-\setbeamerfont{subtitle}{family=\archivo, size=\fontsize{8}{12}}
-\setbeamerfont{author}{family=\archivo, size=\fontsize{8}{12}}
+\setbeamerfont{subtitle}{family=\smalltitle, size=\fontsize{8}{12}}
+\setbeamerfont{author}{family=\smalltitle, size=\fontsize{8}{12}}
 
 \setbeamersize{
   text margin left=0.0375\paperwidth,
